@@ -7,4 +7,4 @@ def index(request):
     return HttpResponse("Hello World")
 
 def inscricao(request):
-    cadastro = 
+    return render(request, 'inscricao.html')
