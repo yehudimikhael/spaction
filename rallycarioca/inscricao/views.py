@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import loader, Template, Context
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .forms import * 
 # Create your views here.
 
 def index(request):
@@ -11,7 +12,8 @@ def index(request):
     return render(request, 'home/index.html')
 
 def inscricao(request):
-    return render(request, 'home/index.html')
+    form = PessoaForm()
+    return render(request, 'inscricao/cadastro_pessoa.html', { 'form': form })
 
 def signup(request):
     if request.method == 'POST':
@@ -24,3 +26,6 @@ def signup(request):
     return render(request, 'registration/signup.html', {
         'form': form
     })
+def cadastro_pessoa(request):
+    form = PessoaForm()
+    return render(request, 'inscricao/cadastro_pessoa.html', { 'form': form })
