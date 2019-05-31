@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+		{% load static %}
+	<meta charset="utf-8"/>
+	<head>
+		<title>Rally Carioca</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--CSS-->
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/bootstrap.min.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/bootstrap-select.min.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/nya-bs-select.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/css.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/nya-bs-select.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/ng-tags-input.css' %}"/>
+		<link rel="stylesheet" href="{% static 'templates/home/assets/css/ng-tags-input.bootstrap.css' %}"/>
+
+		<!--Application Script-->
+		
+		<script src="{% static 'templates/home/assets/js/vendor/angular.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/vendor/angular-cookies.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/vendor/angular-animate.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/vendor/nya-bs-select.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/app.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/breakpoints.min.js' %}"></script>
+		<!--<script src="assets/js/browser.min.js"></script>
+		-->
+		<script src="{% static 'templates/home/assets/js/util.js' %}"></script>
+		<script src="{% static 'templates/home/assets/js/main.js' %}"></script>		
+				
+	</head>
+	<body ng-app="codeapp" class="homepage is-preload" ng-controller="homeController">
+		<div id="page-wrapper" >
+			<!-- Header -->
+				<div id="header" class="wrapper">
+									
+					<!-- Nav -->
+					<div>
+						<nav id="nav" >
+								<ul class="nav navbar-nav navbar-right">
+										<li><span class="nome-usuario;">{{user.username}}</span></li>
+										<!--<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Opções"><i class="fa fa-cog"></i></a></li>-->
+										<li><a href="{% url 'logout'%}" data-toggle="tooltip" data-placement="bottom" ng-click="logout()" title="Sair do sistema"><i class="fa fa-times"></i></a></li> -->
+									</ul>
+							<ul>
+								<li class="current"><a href="{% url 'inscricao'}">Home</a></li>
+								<li>
+									<a href="#">Classificação</a>
+									<ul>
+										<li><a href="#">2018</a></li>
+										<li><a href="#"><strike>2017</strike></a></li>
+										<li>
+											<a href="#">Sed consequat</a>
+											<ul>
+												<li><a href="#">Lorem dolor</a></li>
+												<li><a href="#">Amet consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam nisl</a></li>
+												<li><a href="#">Sed feugiat</a></li>
+											</ul>
+										</li>
+										
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Calendário 2018</a></li>
+								<li><a href="{% url 'signup'%}">Cadastro</a></li>
+								<li><a href="no-sidebar.html">Regulamentos</a></li>
+								<li><a href="no-sidebar.html">Patrocinadores</a></li>
+								<li><a href="no-sidebar.html">Contato</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!-- Logo -->
+					<div id=logo2>
+						<h1><a href="{% url 'index' %}">Rally Carioca</a></h1>
+						<p>Campeonato Estadual de Rally de Regularidade do Rio de Janeiro</p>
+					</div>
+
+					</div>
+		</div>		
+	</body>
+</html

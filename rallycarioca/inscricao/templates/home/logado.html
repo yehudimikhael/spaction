@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+             
+            
+        <!--CSS-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css"/>
+		<link rel="stylesheet" href="assets/css/nya-bs-select.css"/>
+		<link rel="stylesheet" href="assets/css/css.css"/>
+		<link rel="stylesheet" href="assets/css/nya-bs-select.css"/>
+		<link rel="stylesheet" href="assets/css/ng-tags-input.css"/>
+		<link rel="stylesheet" href="assets/css/ng-tags-input.bootstrap.css"/>
+
+
+        <!--JS-->
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="assets/js/vendor/angular.js"></script>
+      	<script src="assets/js/vendor/angular-cookies.js"></script>
+		<script src="assets/js/vendor/nya-bs-select.js"></script>        
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    	<script src="assets/js/app.js"></script>
+
+    
+    </head>
+	
+    <body ng-app="codeapp" ng-controller="homeController" class="homepage is-preload" style="background: black; color: white;">
+        
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                    <div class="container-fluid">
+                      <!-- Brand and toggle get grouped for better mobile display -->
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Rally Carioca</a>
+                      </div>
+                  
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                               
+                        <ul class="nav navbar-nav navbar-right">
+                          <li><p class="navbar-text">Você já tem cadastrado?</p></li>
+                          <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b style="color: #9d9d9d">Login</b> <span class="caret"></span></a>
+                              <ul id="login-dp" class="dropdown-menu">
+                                  <li>
+                                       <div class="row">
+                                              <div class="col-md-12">
+                                                  Login via
+                                                  <div class="social-buttons">
+                                                      <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                                      <a href="#" class="btn-social btn btn-google"><i class="fa fa-google"></i> Google</a>
+                                                  </div>
+                                                  or
+                                                   <form id="form" class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                          <div class="form-group">
+                                                               <label class="sr-only">Email address</label>
+                                                               <input type="email" class="form-control" ng-model="email" placeholder="Email address" required>
+                                                          </div>
+                                                          <div class="form-group">
+                                                               <label class="sr-only">Password</label>
+                                                               <input type="password" class="form2-control" ng-model="pass" placeholder="Password" required>
+                                                               <div class="help-block text-right"><a href="">Esqueceu sua senha ?</a></div>
+                                                          </div>
+                                                          <div class="form-group">
+                                                               <button type="submit" class="btn btn-primary btn-block" ng-click="loging_firebase()">Sign in</button>
+                                                          </div>
+                                                          <div class="checkbox">
+                                                               <label>
+                                                               <input type="checkbox"> keep me logged-in
+                                                               </label>
+                                                          </div>
+                                                   </form>
+                                              </div>
+                                              <div class="bottom text-center">
+                                                  New here ? <a href="#"><b>Join Us</b></a>
+                                              </div>
+                                       </div>
+                                  </li>
+                              </ul>
+                          </li>
+                        </ul>
+                      </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                  </nav>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--<nav class="navbar navbar-default" data-ui-sref-opts="{reload: true}" style="background: black;
+            border: aliceblue;">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand; width: 37%; margin-top: -15px;" href="#">
+								<img src="https://static.wixstatic.com/media/2a62c3_92bb4cd6a8634da184ac085b99c5bb13~mv2.jpg/v1/fill/w_141,h_131,al_c,q_80,usm_0.66_1.00_0.01/2a62c3_92bb4cd6a8634da184ac085b99c5bb13~mv2.webp" alt="RallyCarioca" class="img-responsive log" style="width: 37%;">
+							</a>
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+							<li><span class="nome-usuario">{{currentUser}}</span></li>
+							<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Opções"><i class="fa fa-cog"></i></a></li>
+							<li><a href="#" data-toggle="tooltip" data-placement="bottom" ng-click="logout()" title="Sair do sistema"><i class="fa fa-times"></i></a></li>
+						</ul>
+					</div>
+				</nav>-->
+    <div id="page-wrapper">
+    	<div id="header" class="wrapper">									
+					<!-- Nav -->
+				<div>
+						<nav id="nav" >
+							<ul>
+								<li class="current"><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">Classificação</a>
+									<ul>
+										<li><a href="#">2018</a></li>
+										<li><a href="#"><strike>2017</strike></a></li>
+										<li>
+											<a href="#">Sed consequat</a>
+											<ul>
+												<li><a href="#">Lorem dolor</a></li>
+												<li><a href="#">Amet consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam nisl</a></li>
+												<li><a href="#">Sed feugiat</a></li>
+											</ul>
+										</li>
+										
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Calendário 2018</a></li>
+								<li><a href="login.html">Inscrições</a></li>
+								<li><a href="no-sidebar.html">Regulamentos</a></li>
+								<li><a href="no-sidebar.html">Patrocinadores</a></li>
+								<li><a href="no-sidebar.html">Contato</a></li>
+							</ul>
+						</nav>
+					</div>
+					<!-- Logo -->
+					<div id=logo2>
+						<h1><a href="index.html">Rally Carioca</a></h1>
+						<p>Campeonato Estadual de Rally de Regularidade do Rio de Janeiro</p>
+					</div>
+
+			</div>
+        </div>
+    </body>
+</html>
