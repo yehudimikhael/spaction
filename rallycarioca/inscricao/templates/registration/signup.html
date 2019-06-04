@@ -1,13 +1,12 @@
-{% extends 'home/index.html' %}
+
 {% block content %}
 
 <h2>Cadastro de Usuário</h2>
 <div id="intro" class="wrapper style1">					
         <div class="container">
-            <p class="style1">Apoio</p>
             <form method="post">
                     {% csrf_token %}
-                    {{form.as_html}
+                    {{form.as_p}}
                     <button type="submit">Sign up</button>
                 </form>
             <p class="style3">PÁGINA OFICIAL DO RALLY CARIOCA - FUNDADO EM JANEIRO DE 2017

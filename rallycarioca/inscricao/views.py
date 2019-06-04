@@ -27,5 +27,18 @@ def signup(request):
         'form': form
     })
 def cadastro_pessoa(request):
-    form = PessoaForm()
-    return render(request, 'inscricao/cadastro_pessoa.html', { 'form': form })
+    if request.method == 'POST':
+        form = PessoaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inscricao')
+        else:
+            return render(request, 'inscricao/cadastro_pessoa.html', { 'form': form })
+def cadastro_navegador(request):
+    if request.method == 'POST':
+        form = PessoaNavegador(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inscricao')
+        else:
+            return render(request, 'inscricao/cadastro_navegador.html', { 'form': form})
